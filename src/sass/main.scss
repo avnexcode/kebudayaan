@@ -62,7 +62,7 @@ section#main-page {
         display: flex;
         // flex-direction: column;
         width: 100%;
-        opacity: 90%;
+        opacity: 85%;
         height: 100vh;
         overflow: hidden;
         #container-background {
@@ -80,7 +80,7 @@ section#main-page {
                     flex: 0 0 auto;
                     text-align: center;
                     img {
-                        filter: blur(5px);
+                        filter: brightness(45%);
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
@@ -116,6 +116,9 @@ section#main-page {
             font-family: $caveat;
             font-size: 2rem;
             a {
+                text-shadow:
+                    4px 4px 2px rgba(255, 255, 255, 0.9),
+                    8px 8px 2px rgba(255, 255, 255, 0.5);
                 color: black;
                 font-size: 3rem;
                 text-decoration: none;
@@ -169,7 +172,7 @@ section#main-page {
                     transition: all 300ms ease-in-out;
                 }
                 &:hover a {
-                    color: red;
+                    color: white;
                     letter-spacing: 2px;
                     font-size: 1.55rem;
                 }
@@ -246,8 +249,9 @@ section#main-page {
                     border-radius: 50%;
                     border: 1.5px solid black;
                 }
-                // .username {
-                // }
+                .username {
+                    z-index: 999;
+                }
             }
         }
         input#nav-check {
@@ -408,6 +412,20 @@ section#main-page {
         padding: 50px 0;
         height: 4rem;
         h1 {
+            background: #cf0000;
+            background: linear-gradient(to bottom right, #cf0000 37%, #fff7f7 62%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            padding: 2px 10px;
+            z-index: 999;
+            height: min-content;
+            border: {
+                top: 6px solid white;
+                left: 6px solid white;
+                bottom: 6px solid red;
+                right: 6px solid red;
+            }
+            // text-shadow: 4px 4px 2px rgba(255,255,255,0.9);
             font-size: 3rem;
             font-family: $onest;
             color: $slate-800;
@@ -430,27 +448,31 @@ section#main-page {
             // border: 1px solid red;
             padding: 0 10px;
             #container-index {
-                border: {
-                    top: 2px solid black;
-                    bottom: 2px solid black;
-                }
                 overflow: hidden;
                 width: min-content;
                 margin: 0 auto;
                 height: 30px;
                 // border-radius: 50%;
                 aspect-ratio: 1/1;
+                // z-index: 999;
                 .carousel-wrapper {
+                    z-index: 999;
                     display: flex;
                     transition: transform 0.5s ease-in-out;
                     flex-direction: column;
                     .carousel-slide {
+                        border: {
+                            top: 2px solid white;
+                            bottom: 2px solid white;
+                        }
+                        z-index: 999;
                         height: 30px;
                         flex: 0 0 auto;
                         width: 100%;
                         text-align: center;
                         span {
                             font-size: 1.3rem;
+                            color: white;
                             font-weight: 700;
                         }
                     }
@@ -518,8 +540,9 @@ section#main-page {
                         p {
                             padding: 20px;
                             border-radius: 1.5rem;
-                            background-color: rgba(255, 255, 255, 0.5);
+                            background-color: rgba(30, 30, 30, 0.4);
                             font-size: 1.2rem;
+                            color: white;
                         }
                     }
                 }
@@ -648,7 +671,7 @@ section#main-page {
                     font-family: inherit;
                     width: 10rem;
                     height: 2.5rem;
-                    border: 3px solid #282936;
+                    border: 3px solid $slate-300;
                     border-radius: 2rem;
 
                     .circle {
@@ -658,7 +681,7 @@ section#main-page {
                         margin: 0;
                         width: 2.5rem;
                         height: 2.5rem;
-                        background: #282936;
+                        background: $slate-300;
                         border-radius: 1.625rem;
                         margin-right: -3px;
 
@@ -668,7 +691,7 @@ section#main-page {
                             top: 0;
                             bottom: 0;
                             margin: auto;
-                            background: #fff;
+                            background: $gray-950;
                         }
 
                         .icon.arrow {
@@ -685,8 +708,8 @@ section#main-page {
                                 left: 0.1625rem;
                                 width: 0.625rem;
                                 height: 0.625rem;
-                                border-top: 0.125rem solid #fff;
-                                border-left: 0.125rem solid #fff;
+                                border-top: 0.125rem solid $gray-950;
+                                border-left: 0.125rem solid $gray-950;
                                 transform: rotate(-45deg); // Rotasi panah
                             }
                         }
@@ -704,7 +727,7 @@ section#main-page {
                         bottom: 0;
                         padding: 0.75rem 0;
                         // margin: 0 1.85rem 0 0;
-                        color: #282936;
+                        color: $slate-300;
                         font-weight: 700;
                         line-height: 1.6;
                         text-align: center;
@@ -717,12 +740,12 @@ section#main-page {
                         }
 
                         .circle .icon.arrow {
-                            background: #fff;
+                            background: $gray-950;
                             transform: translate(-1rem, 0);
                         }
 
                         .button-text {
-                            color: #fff;
+                            color: $gray-950;
                         }
                     }
                 }
@@ -742,7 +765,7 @@ section#main-page {
                     font-family: inherit;
                     width: 10rem;
                     height: 2.5rem;
-                    border: 3px solid #282936;
+                    border: 3px solid $slate-300;
                     border-radius: 2rem;
 
                     .circle {
@@ -752,7 +775,7 @@ section#main-page {
                         margin: 0;
                         width: 2.5rem;
                         height: 2.5rem;
-                        background: #282936;
+                        background: $slate-300;
                         border-radius: 1.625rem;
                         margin-left: -3px;
                         .icon {
@@ -761,7 +784,7 @@ section#main-page {
                             top: 0;
                             bottom: 0;
                             margin: auto;
-                            background: #fff;
+                            background: $gray-950;
                         }
 
                         .icon.arrow {
@@ -778,8 +801,8 @@ section#main-page {
                                 right: 0.1625rem;
                                 width: 0.625rem;
                                 height: 0.625rem;
-                                border-top: 0.125rem solid #fff;
-                                border-right: 0.125rem solid #fff;
+                                border-top: 0.125rem solid $gray-950;
+                                border-right: 0.125rem solid $gray-950;
                                 transform: rotate(45deg);
                             }
                         }
@@ -797,7 +820,7 @@ section#main-page {
                         bottom: 0;
                         padding: 0.75rem 0;
                         // margin: 0 0 0 1.85rem;
-                        color: #282936;
+                        color: $slate-300;
                         font-weight: 700;
                         line-height: 1.6;
                         text-align: center;
@@ -810,12 +833,12 @@ section#main-page {
                         }
 
                         .circle .icon.arrow {
-                            background: #fff;
+                            background: $gray-950;
                             transform: translate(1rem, 0);
                         }
 
                         .button-text {
-                            color: #fff;
+                            color: $gray-950;
                         }
                     }
                 }

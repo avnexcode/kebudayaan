@@ -26,7 +26,7 @@ section#main-page .background-list {
   position: absolute;
   display: flex;
   width: 100%;
-  opacity: 90%;
+  opacity: 85%;
   height: 100vh;
   overflow: hidden;
 }
@@ -48,7 +48,7 @@ section#main-page .background-list #container-background .carousel-wrapper .caro
   text-align: center;
 }
 section#main-page .background-list #container-background .carousel-wrapper .carousel-slide img {
-  filter: blur(5px);
+  filter: brightness(45%);
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -82,6 +82,7 @@ section#main-page nav .title {
   }
 }
 section#main-page nav .title a {
+  text-shadow: 4px 4px 2px rgba(255, 255, 255, 0.9), 8px 8px 2px rgba(255, 255, 255, 0.5);
   color: black;
   font-size: 3rem;
   text-decoration: none;
@@ -134,7 +135,7 @@ section#main-page nav ul.desktop-nav li a {
   transition: all 300ms ease-in-out;
 }
 section#main-page nav ul.desktop-nav li:hover a {
-  color: red;
+  color: white;
   letter-spacing: 2px;
   font-size: 1.55rem;
 }
@@ -205,6 +206,9 @@ section#main-page nav .utils .profile .image {
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid black;
+}
+section#main-page nav .utils .profile .username {
+  z-index: 999;
 }
 section#main-page nav input#nav-check {
   display: block;
@@ -350,6 +354,17 @@ section#main-page header {
   height: 4rem;
 }
 section#main-page header h1 {
+  background: #cf0000;
+  background: linear-gradient(to bottom right, #cf0000 37%, #fff7f7 62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 2px 10px;
+  z-index: 999;
+  height: min-content;
+  border-top: 6px solid white;
+  border-left: 6px solid white;
+  border-bottom: 6px solid red;
+  border-right: 6px solid red;
   font-size: 3rem;
   font-family: "Onest", sans-serif;
   color: #1e293b;
@@ -374,8 +389,6 @@ section#main-page main .index-list {
   padding: 0 10px;
 }
 section#main-page main .index-list #container-index {
-  border-top: 2px solid black;
-  border-bottom: 2px solid black;
   overflow: hidden;
   width: min-content;
   margin: 0 auto;
@@ -383,11 +396,15 @@ section#main-page main .index-list #container-index {
   aspect-ratio: 1/1;
 }
 section#main-page main .index-list #container-index .carousel-wrapper {
+  z-index: 999;
   display: flex;
   transition: transform 0.5s ease-in-out;
   flex-direction: column;
 }
 section#main-page main .index-list #container-index .carousel-wrapper .carousel-slide {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  z-index: 999;
   height: 30px;
   flex: 0 0 auto;
   width: 100%;
@@ -395,6 +412,7 @@ section#main-page main .index-list #container-index .carousel-wrapper .carousel-
 }
 section#main-page main .index-list #container-index .carousel-wrapper .carousel-slide span {
   font-size: 1.3rem;
+  color: white;
   font-weight: 700;
 }
 section#main-page main .text-list {
@@ -456,8 +474,9 @@ section#main-page main .text-list #container-describe .carousel-wrapper .carouse
 section#main-page main .text-list #container-describe .carousel-wrapper .carousel-slide p {
   padding: 20px;
   border-radius: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(30, 30, 30, 0.4);
   font-size: 1.2rem;
+  color: white;
 }
 section#main-page main .text-list .button-explore {
   margin-bottom: 10rem;
@@ -576,7 +595,7 @@ section#main-page main .card-list .button-wrapper button.prev {
   font-family: inherit;
   width: 10rem;
   height: 2.5rem;
-  border: 3px solid #282936;
+  border: 3px solid #cbd5e1;
   border-radius: 2rem;
 }
 section#main-page main .card-list .button-wrapper button.prev .circle {
@@ -586,7 +605,7 @@ section#main-page main .card-list .button-wrapper button.prev .circle {
   margin: 0;
   width: 2.5rem;
   height: 2.5rem;
-  background: #282936;
+  background: #cbd5e1;
   border-radius: 1.625rem;
   margin-right: -3px;
 }
@@ -596,7 +615,7 @@ section#main-page main .card-list .button-wrapper button.prev .circle .icon {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #fff;
+  background: #030712;
 }
 section#main-page main .card-list .button-wrapper button.prev .circle .icon.arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -612,8 +631,8 @@ section#main-page main .card-list .button-wrapper button.prev .circle .icon.arro
   left: 0.1625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-left: 0.125rem solid #fff;
+  border-top: 0.125rem solid #030712;
+  border-left: 0.125rem solid #030712;
   transform: rotate(-45deg);
 }
 section#main-page main .card-list .button-wrapper button.prev .button-text {
@@ -627,7 +646,7 @@ section#main-page main .card-list .button-wrapper button.prev .button-text {
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
-  color: #282936;
+  color: #cbd5e1;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -637,11 +656,11 @@ section#main-page main .card-list .button-wrapper button.prev:hover .circle {
   width: 100%;
 }
 section#main-page main .card-list .button-wrapper button.prev:hover .circle .icon.arrow {
-  background: #fff;
+  background: #030712;
   transform: translate(-1rem, 0);
 }
 section#main-page main .card-list .button-wrapper button.prev:hover .button-text {
-  color: #fff;
+  color: #030712;
 }
 section#main-page main .card-list .button-wrapper button.next {
   position: relative;
@@ -658,7 +677,7 @@ section#main-page main .card-list .button-wrapper button.next {
   font-family: inherit;
   width: 10rem;
   height: 2.5rem;
-  border: 3px solid #282936;
+  border: 3px solid #cbd5e1;
   border-radius: 2rem;
 }
 section#main-page main .card-list .button-wrapper button.next .circle {
@@ -668,7 +687,7 @@ section#main-page main .card-list .button-wrapper button.next .circle {
   margin: 0;
   width: 2.5rem;
   height: 2.5rem;
-  background: #282936;
+  background: #cbd5e1;
   border-radius: 1.625rem;
   margin-left: -3px;
 }
@@ -678,7 +697,7 @@ section#main-page main .card-list .button-wrapper button.next .circle .icon {
   top: 0;
   bottom: 0;
   margin: auto;
-  background: #fff;
+  background: #030712;
 }
 section#main-page main .card-list .button-wrapper button.next .circle .icon.arrow {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -694,8 +713,8 @@ section#main-page main .card-list .button-wrapper button.next .circle .icon.arro
   right: 0.1625rem;
   width: 0.625rem;
   height: 0.625rem;
-  border-top: 0.125rem solid #fff;
-  border-right: 0.125rem solid #fff;
+  border-top: 0.125rem solid #030712;
+  border-right: 0.125rem solid #030712;
   transform: rotate(45deg);
 }
 section#main-page main .card-list .button-wrapper button.next .button-text {
@@ -709,7 +728,7 @@ section#main-page main .card-list .button-wrapper button.next .button-text {
   right: 0;
   bottom: 0;
   padding: 0.75rem 0;
-  color: #282936;
+  color: #cbd5e1;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -719,11 +738,11 @@ section#main-page main .card-list .button-wrapper button.next:hover .circle {
   width: 100%;
 }
 section#main-page main .card-list .button-wrapper button.next:hover .circle .icon.arrow {
-  background: #fff;
+  background: #030712;
   transform: translate(1rem, 0);
 }
 section#main-page main .card-list .button-wrapper button.next:hover .button-text {
-  color: #fff;
+  color: #030712;
 }
 
 section#profile-page {
