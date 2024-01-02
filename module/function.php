@@ -10,3 +10,6 @@ function getData($sql) {
     }
     return $data;
 }
+function removeLocalhost($url) {
+    return str_replace('http://localhost/kebudayaan/', '', $url);
+}
