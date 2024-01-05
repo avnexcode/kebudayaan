@@ -983,4 +983,98 @@ section#show-island .button-wrapper button {
   font-size: 1.2rem;
 }
 
+section#detail-ethnic {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+section#detail-ethnic nav {
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 40px;
+}
+section#detail-ethnic nav .button-back a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
+section#detail-ethnic nav .button-back a:hover {
+  color: red;
+}
+section#detail-ethnic nav .title {
+  z-index: 999;
+  font-weight: 700;
+  font-family: "Caveat", cursive;
+  font-size: 3rem;
+}
+section#detail-ethnic nav .title a {
+  text-shadow: 4px 4px 2px rgba(255, 255, 255, 0.9), 8px 8px 2px rgba(255, 255, 255, 0.5);
+  color: black;
+  text-decoration: none;
+}
+section#detail-ethnic header {
+  display: flex;
+  align-items: center;
+  padding: 5rem 5%;
+  background-color: rgb(237, 188, 130);
+  width: 100%;
+}
+section#detail-ethnic header .title {
+  width: 50%;
+  position: relative;
+}
+section#detail-ethnic header .title h1 {
+  font-size: 2.5rem;
+  padding: 0 10px;
+}
+section#detail-ethnic header .title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background-color: black;
+}
+section#detail-ethnic header .describe {
+  padding: 0 50px;
+  text-align: justify;
+}
+section#detail-ethnic header .describe span {
+  font-size: 1.1rem;
+}
+section#detail-ethnic main {
+  width: 100%;
+  padding: 10px 5rem;
+  background-color: white;
+  padding: 10px 0;
+  background: rgb(67, 86, 126);
+  height: 100%;
+}
+section#detail-ethnic main .table-content {
+  height: 100%;
+  width: 100%;
+}
+section#detail-ethnic main .table-content table {
+  height: 100%;
+  padding: 3rem 10rem;
+  background-color: white;
+  width: 100%;
+}
+section#detail-ethnic main .table-content table thead th {
+  padding: 5px 10px;
+  background-color: orange;
+}
+section#detail-ethnic main .table-content table tbody tr td {
+  text-align: center;
+  padding: 5px 10px;
+  background-color: #f1f5f9;
+}
+section#detail-ethnic main .table-content table tbody tr td:nth-child(1) {
+  background-color: #cbd5e1;
+}
+
 /*# sourceMappingURL=main.css.map */
