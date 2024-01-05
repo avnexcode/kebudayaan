@@ -47,19 +47,6 @@ if (isset($_GET['slug'])) {
                 <a id="detail-title" href="">Pulau <?= $island['name'] ?></a>
             </div>
         </nav>
-        <!-- contoh -->
-        <!-- <div class="index-list">
-            <div id="container-index">
-                <div class="carousel-wrapper">
-                    <?php foreach ($islands as $key => $value) : ?>
-                        <div class="carousel-slide">
-                            <span><?= $key + 1 ?></span>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
-        </div> -->
-        <!-- end contoh -->
         <div class="content-list">
             <div id="container-wrapper">
                 <?php foreach ($ethnics as $key => $value) : ?>
@@ -72,7 +59,7 @@ if (isset($_GET['slug'])) {
                                 <h1 id="detail-title"><?= $value['name'] ?></h1>
                                 <p><?= $value['describe'] ?></p>
                                 <div class="button-explore">
-                                    <button>Explore</button>
+                                    <a href="http://localhost/kebudayaan/views/show/island/detail?slug=<?= $value['slug'] ?>">Explore</a>
                                 </div>
                             </div>
                         </header>

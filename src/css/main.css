@@ -181,6 +181,7 @@ section#main-page nav .utils .profile .image {
 }
 section#main-page nav .utils .profile .username {
   z-index: 999;
+  color: white;
 }
 section#main-page header {
   display: flex;
@@ -937,7 +938,8 @@ section#show-island div.content-list #container-wrapper .carousel-slide header .
   display: flex;
   justify-content: flex-end;
 }
-section#show-island div.content-list #container-wrapper .carousel-slide header .describe .button-explore button {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe .button-explore a {
+  text-decoration: none;
   background-color: rgba(57, 46, 45, 0.8);
   color: white;
   border: none;

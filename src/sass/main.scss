@@ -221,6 +221,7 @@ section#main-page {
                 }
                 .username {
                     z-index: 999;
+                    color: white;
                 }
             }
         }
@@ -1058,7 +1059,8 @@ section#show-island {
                             width: 70%;
                             display: flex;
                             justify-content: flex-end;
-                            button {
+                            a {
+                                text-decoration: none;
                                 background-color: rgba(57, 46, 45, 0.8);
                                 color: white;
                                 border: none;
