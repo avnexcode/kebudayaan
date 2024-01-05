@@ -232,6 +232,7 @@ $islands = getData("SELECT * FROM islands");
 
         }
 
+
         // wrapper
         const carouselCard = document.querySelector('#container-card .carousel-wrapper');
         const carouselTitle = document.querySelector('#container-title .carousel-wrapper');

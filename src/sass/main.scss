@@ -968,6 +968,7 @@ section#contact-page {
 
 section#show-island {
     position: relative;
+    overflow: hidden;
     nav {
         position: fixed;
         top: 0;
@@ -1001,88 +1002,111 @@ section#show-island {
             }
         }
     }
-    div.content {
+    div.content-list {
+        overflow: hidden;
         min-width: 100%;
         max-width: 100%;
         min-height: 100vh;
         max-height: 100vh;
-        header {
-            padding: 0 10%;
-            display: flex;
-            justify-content: space-between;
-            .image {
-                border: {
-                    bottom-left-radius: 3rem;
-                    bottom-right-radius: 3rem;
-                }
-                width: 70%;
-                height: 60vh;
-                background-color: rgba(57, 46, 45, 255);
-                display: flex;
-                justify-content: center;
-                position: relative;
-                img {
-                    filter: drop-shadow(5px 5px 16px #000000);
-                    position: absolute;
-                    bottom: -30px;
-                    // margin-top: 1rem;
-                    width: 500px;
-                    aspect-ratio: 1/1;
-                    object-fit: cover;
-                    border-radius: 50%;
-                }
-            }
-            .describe {
-                flex-grow: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-                gap: 25px;
-                h1 {
-                    font-size: 3rem;
-                    font-family: $onest;
-                    font-weight: 600;
-                }
-                p {
-                    width: 80%;
-                    text-align: justify;
-                }
-                .button-explore {
-                    width: 70%;
+        #container-wrapper {
+            transition: transform 0.5s ease-in-out;
+            .carousel-slide {
+                height: 100vh;
+                header {
+                    padding: 0 10%;
                     display: flex;
-                    justify-content: flex-end;
-                    button {
-                        background-color: rgba(57, 46, 45, 0.8);
-                        color: white;
-                        border: none;
-                        padding: 10px 4rem;
-                        font-size: 2rem;
-                    }
-                }
-            }
-        }
-        main {
-            margin-top: 5rem;
-            .gallery {
-                .image-list {
-                    display: flex;
-                    flex-direction: row;
-                    gap: 50px;
-                    justify-content: center;
-                    .img {
-                        padding: 10px;
+                    justify-content: space-between;
+                    .image {
+                        border: {
+                            bottom-left-radius: 3rem;
+                            bottom-right-radius: 3rem;
+                        }
+                        width: 70%;
+                        height: 60vh;
+                        background-color: rgba(57, 46, 45, 255);
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
                         img {
-                            filter: drop-shadow(10px 10px 0px rgba(57,46,45,0.8));
-                            width: 200px;
-                            border: 3px solid white;
-                            border-radius: 1rem;
+                            filter: drop-shadow(5px 5px 16px #000000);
+                            position: absolute;
+                            bottom: -30px;
+                            // margin-top: 1rem;
+                            width: 500px;
                             aspect-ratio: 1/1;
                             object-fit: cover;
+                            border-radius: 50%;
+                        }
+                    }
+                    .describe {
+                        flex-grow: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        gap: 25px;
+                        h1 {
+                            font-size: 3rem;
+                            font-family: $onest;
+                            font-weight: 600;
+                        }
+                        p {
+                            width: 80%;
+                            text-align: justify;
+                        }
+                        .button-explore {
+                            width: 70%;
+                            display: flex;
+                            justify-content: flex-end;
+                            button {
+                                background-color: rgba(57, 46, 45, 0.8);
+                                color: white;
+                                border: none;
+                                padding: 10px 4rem;
+                                font-size: 2rem;
+                            }
+                        }
+                    }
+                }
+                main {
+                    margin-top: 5rem;
+                    .gallery {
+                        .image-list {
+                            display: flex;
+                            flex-direction: row;
+                            gap: 50px;
+                            justify-content: center;
+                            .img {
+                                padding: 10px;
+                                img {
+                                    filter: drop-shadow(10px 10px 0px rgba(57, 46, 45, 0.8));
+                                    width: 200px;
+                                    border: 3px solid white;
+                                    border-radius: 1rem;
+                                    aspect-ratio: 1/1;
+                                    object-fit: cover;
+                                }
+                            }
                         }
                     }
                 }
             }
+        }
+    }
+    .button-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        position: fixed;
+        bottom: 3%;
+        right: 3%;
+        button {
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            background-color: rgba(57, 46, 45, 0.8);
+            color: white;
+            font-size: 1.2rem;
         }
     }
 }

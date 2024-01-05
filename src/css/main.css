@@ -847,6 +847,7 @@ section#contact-page nav .utils .profile .username {
 
 section#show-island {
   position: relative;
+  overflow: hidden;
 }
 section#show-island nav {
   position: fixed;
@@ -877,18 +878,25 @@ section#show-island nav .title a {
   color: black;
   text-decoration: none;
 }
-section#show-island div.content {
+section#show-island div.content-list {
+  overflow: hidden;
   min-width: 100%;
   max-width: 100%;
   min-height: 100vh;
   max-height: 100vh;
 }
-section#show-island div.content header {
+section#show-island div.content-list #container-wrapper {
+  transition: transform 0.5s ease-in-out;
+}
+section#show-island div.content-list #container-wrapper .carousel-slide {
+  height: 100vh;
+}
+section#show-island div.content-list #container-wrapper .carousel-slide header {
   padding: 0 10%;
   display: flex;
   justify-content: space-between;
 }
-section#show-island div.content header .image {
+section#show-island div.content-list #container-wrapper .carousel-slide header .image {
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
   width: 70%;
@@ -898,7 +906,7 @@ section#show-island div.content header .image {
   justify-content: center;
   position: relative;
 }
-section#show-island div.content header .image img {
+section#show-island div.content-list #container-wrapper .carousel-slide header .image img {
   filter: drop-shadow(5px 5px 16px #000000);
   position: absolute;
   bottom: -30px;
@@ -907,7 +915,7 @@ section#show-island div.content header .image img {
   object-fit: cover;
   border-radius: 50%;
 }
-section#show-island div.content header .describe {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe {
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -915,46 +923,62 @@ section#show-island div.content header .describe {
   flex-direction: column;
   gap: 25px;
 }
-section#show-island div.content header .describe h1 {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe h1 {
   font-size: 3rem;
   font-family: "Onest", sans-serif;
   font-weight: 600;
 }
-section#show-island div.content header .describe p {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe p {
   width: 80%;
   text-align: justify;
 }
-section#show-island div.content header .describe .button-explore {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe .button-explore {
   width: 70%;
   display: flex;
   justify-content: flex-end;
 }
-section#show-island div.content header .describe .button-explore button {
+section#show-island div.content-list #container-wrapper .carousel-slide header .describe .button-explore button {
   background-color: rgba(57, 46, 45, 0.8);
   color: white;
   border: none;
   padding: 10px 4rem;
   font-size: 2rem;
 }
-section#show-island div.content main {
+section#show-island div.content-list #container-wrapper .carousel-slide main {
   margin-top: 5rem;
 }
-section#show-island div.content main .gallery .image-list {
+section#show-island div.content-list #container-wrapper .carousel-slide main .gallery .image-list {
   display: flex;
   flex-direction: row;
   gap: 50px;
   justify-content: center;
 }
-section#show-island div.content main .gallery .image-list .img {
+section#show-island div.content-list #container-wrapper .carousel-slide main .gallery .image-list .img {
   padding: 10px;
 }
-section#show-island div.content main .gallery .image-list .img img {
+section#show-island div.content-list #container-wrapper .carousel-slide main .gallery .image-list .img img {
   filter: drop-shadow(10px 10px 0px rgba(57, 46, 45, 0.8));
   width: 200px;
   border: 3px solid white;
   border-radius: 1rem;
   aspect-ratio: 1/1;
   object-fit: cover;
+}
+section#show-island .button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+}
+section#show-island .button-wrapper button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  background-color: rgba(57, 46, 45, 0.8);
+  color: white;
+  font-size: 1.2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

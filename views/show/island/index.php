@@ -22,7 +22,7 @@ if (isset($_GET['slug'])) {
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
+
     <title><?= $island['name'] ?> - Kebudayaan</title>
 </head>
 
@@ -35,7 +35,7 @@ if (isset($_GET['slug'])) {
     </div>
     <section id="show-island">
         <div class="identity">
-            
+
         </div>
         <nav>
             <div class="button-back">
@@ -47,33 +47,54 @@ if (isset($_GET['slug'])) {
                 <a id="detail-title" href="">Pulau <?= $island['name'] ?></a>
             </div>
         </nav>
-        <?php foreach ($ethnics as $key => $value) : ?>
-            <div class="content">
-                <header>
-                    <div class="image">
-                        <img src="../../../public/assets/image/suku/<?= $value['image'] ?>" alt="">
-                    </div>
-                    <div class="describe">
-                        <h1 id="detail-title"><?= $value['name'] ?></h1>
-                        <p><?= $value['describe'] ?></p>
-                        <div class="button-explore">
-                            <button>Explore</button>
+        <!-- contoh -->
+        <!-- <div class="index-list">
+            <div id="container-index">
+                <div class="carousel-wrapper">
+                    <?php foreach ($islands as $key => $value) : ?>
+                        <div class="carousel-slide">
+                            <span><?= $key + 1 ?></span>
                         </div>
-                    </div>
-                </header>
-                <main>
-                    <div class="gallery">
-                        <div class="image-list">
-                            <?php foreach (json_decode($value['gallery']) as $key => $gallery) : ?>
-                                <div class="img" data-aos="flip-right">
-                                    <img src="../../../public/assets/image/suku/<?= $gallery ?>" alt="">
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                </main>
+                    <?php endforeach; ?>
+                </div>
             </div>
-        <?php endforeach; ?>
+        </div> -->
+        <!-- end contoh -->
+        <div class="content-list">
+            <div id="container-wrapper">
+                <?php foreach ($ethnics as $key => $value) : ?>
+                    <div class="carousel-slide">
+                        <header>
+                            <div class="image">
+                                <img src="../../../public/assets/image/suku/<?= $value['image'] ?>" alt="">
+                            </div>
+                            <div class="describe">
+                                <h1 id="detail-title"><?= $value['name'] ?></h1>
+                                <p><?= $value['describe'] ?></p>
+                                <div class="button-explore">
+                                    <button>Explore</button>
+                                </div>
+                            </div>
+                        </header>
+                        <main>
+                            <div class="gallery">
+                                <div class="image-list">
+                                    <?php foreach (json_decode($value['gallery']) as $key => $gallery) : ?>
+                                        <div class="img">
+                                            <img src="../../../public/assets/image/suku/<?= $gallery ?>" alt="">
+                                        </div>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        </div>
+        <div class="button-wrapper">
+            <button id="btn-prev"><i class="fa-solid fa-arrow-up"></i></button>
+            <button id="btn-next"><i class="fa-solid fa-arrow-down"></i></button>
+        </div>
     </section>
 
     <script>
@@ -111,6 +132,72 @@ if (isset($_GET['slug'])) {
             // }
         };
         typing()
+        const carouselElement = (wrapper, orientation, loop = false) => {
+
+            const slides = wrapper.children;
+            let sliderSize;
+            if (orientation === 'horizontal') {
+                sliderSize = slides[0].offsetWidth;
+            } else {
+                sliderSize = slides[0].offsetHeight;
+            }
+
+            let currentIndex = 0,
+                transformStyle;
+
+
+            if (orientation === 'horizontal') {
+                transformStyle = (index) => {
+                    return `translateX(${index}px)`;
+                }
+            } else if (orientation === 'vertical') {
+                transformStyle = (index) => {
+                    return `translateY(${index}px)`;
+                }
+            }
+
+            const updateCarousel = () => {
+                wrapper.style.transform = transformStyle(-currentIndex * sliderSize);
+            }
+
+            const nextSlide = () => {
+                currentIndex++;
+                if (currentIndex >= slides.length) {
+                    currentIndex = 0;
+                }
+                updateCarousel();
+            }
+
+            const prevSlide = () => {
+                currentIndex--;
+                if (currentIndex < 0) {
+                    currentIndex = slides.length - 1;
+                }
+                updateCarousel();
+            }
+
+
+            if (loop) {
+                setInterval(nextSlide, 10000)
+            }
+
+            return {
+                next: nextSlide,
+                prev: prevSlide
+            }
+
+        }
+        const wrapper = document.getElementById('container-wrapper')
+        const content = carouselElement(wrapper, 'vertical', false);
+        const next = document.getElementById('btn-next')
+        const prev = document.getElementById('btn-prev')
+
+        next.addEventListener('click', e => {
+            content.next()
+        })
+        prev.addEventListener('click', e => {
+            content.prev()
+        })
     </script>
 </body>
 
