@@ -182,6 +182,7 @@ section#main-page nav .utils .profile .image {
 section#main-page nav .utils .profile .username {
   z-index: 999;
   color: white;
+  text-decoration: none;
 }
 section#main-page header {
   display: flex;
@@ -589,7 +590,7 @@ section#profile-page nav .title {
   z-index: 999;
   font-weight: 700;
   font-family: "Caveat", cursive;
-  font-size: 3.5rem;
+  font-size: 2rem;
 }
 section#profile-page nav .title a {
   text-shadow: 4px 4px 2px rgba(255, 255, 255, 0.9), 8px 8px 2px rgba(255, 255, 255, 0.5);
@@ -666,6 +667,8 @@ section#profile-page nav .utils .profile .image {
 }
 section#profile-page nav .utils .profile .username {
   z-index: 999;
+  color: white;
+  text-decoration: none;
 }
 section#profile-page main {
   height: 100vh;
@@ -756,36 +759,40 @@ section#profile-page main .card-list .container .card .icons {
   margin-top: 20px;
 }
 
-section#contact-page nav {
+section#comment-page {
+  width: 100%;
+  height: 100vh;
+}
+section#comment-page nav {
   z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px 40px;
 }
-section#contact-page nav .title {
+section#comment-page nav .title {
   z-index: 999;
-  font-size: 3.5rem;
   font-weight: 700;
   font-family: "Caveat", cursive;
+  font-size: 2rem;
 }
-section#contact-page nav .title a {
+section#comment-page nav .title a {
   text-shadow: 4px 4px 2px rgba(255, 255, 255, 0.9), 8px 8px 2px rgba(255, 255, 255, 0.5);
   color: black;
   font-size: 3rem;
   text-decoration: none;
 }
-section#contact-page nav ul.desktop-nav {
+section#comment-page nav ul.desktop-nav {
   display: flex;
   align-items: center;
   gap: 50px;
   list-style: none;
 }
-section#contact-page nav ul.desktop-nav li {
+section#comment-page nav ul.desktop-nav li {
   position: relative;
   padding: 0 10px;
 }
-section#contact-page nav ul.desktop-nav li::after {
+section#comment-page nav ul.desktop-nav li::after {
   content: "";
   display: block;
   position: absolute;
@@ -796,7 +803,7 @@ section#contact-page nav ul.desktop-nav li::after {
   background-color: black;
   transition: all 300ms ease-in-out;
 }
-section#contact-page nav ul.desktop-nav li::before {
+section#comment-page nav ul.desktop-nav li::before {
   content: "";
   display: block;
   position: absolute;
@@ -807,43 +814,207 @@ section#contact-page nav ul.desktop-nav li::before {
   background-color: black;
   transition: all 300ms ease-in-out;
 }
-section#contact-page nav ul.desktop-nav li:hover::after, section#contact-page nav ul.desktop-nav li:hover::before {
+section#comment-page nav ul.desktop-nav li:hover::after, section#comment-page nav ul.desktop-nav li:hover::before {
   width: 80%;
 }
-section#contact-page nav ul.desktop-nav li:nth-child(3) a {
+section#comment-page nav ul.desktop-nav li:nth-child(3) a {
   color: white;
 }
-section#contact-page nav ul.desktop-nav li a {
+section#comment-page nav ul.desktop-nav li a {
   font-size: 1.1rem;
   font-weight: 500;
   color: black;
   text-decoration: none;
   transition: all 300ms ease-in-out;
 }
-section#contact-page nav ul.desktop-nav li:hover a {
+section#comment-page nav ul.desktop-nav li:hover a {
   color: white;
   letter-spacing: 2px;
   font-size: 1.2rem;
 }
-section#contact-page nav .utils {
+section#comment-page nav .utils {
   display: flex;
   align-items: center;
   gap: 20px;
 }
-section#contact-page nav .utils .profile {
+section#comment-page nav .utils .profile {
   display: flex;
   align-items: center;
   gap: 5px;
 }
-section#contact-page nav .utils .profile .image {
+section#comment-page nav .utils .profile .image {
   object-fit: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid black;
 }
-section#contact-page nav .utils .profile .username {
+section#comment-page nav .utils .profile .username {
   z-index: 999;
+  color: white;
+  text-decoration: none;
+}
+section#comment-page header {
+  width: 100%;
+  display: flex;
+  padding: 1rem 0;
+  justify-content: center;
+}
+section#comment-page header .title {
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+}
+section#comment-page main {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+section#comment-page main .side {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+section#comment-page main .side-left .form-container {
+  max-width: 700px;
+  height: auto;
+  max-height: 450px;
+  margin: 30px;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  padding: 30px;
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+section#comment-page main .side-left .form-container .heading {
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+section#comment-page main .side-left .form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #f1f5f9;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+section#comment-page main .side-left .form-container .form .input:focus {
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+}
+section#comment-page main .side-left .form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #f1f5f9;
+  color: rgba(57, 46, 45, 0.8);
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+section#comment-page main .side-left .form-container .form .textarea:focus {
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+}
+section#comment-page main .side-left .form-container .form .button-container {
+  display: flex;
+  gap: 10px;
+}
+section#comment-page main .side-left .form-container .form .button-container .send-button {
+  flex-basis: 70%;
+  background: #cbd5e1;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+section#comment-page main .side-left .form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid rgba(57, 46, 45, 0.8);
+  color: #f1f5f9;
+}
+section#comment-page main .side-left .form-container .form .button-container .reset-button-container {
+  filter: drop-shadow(1px 1px 0px rgba(57, 46, 45, 0.8));
+  flex-basis: 30%;
+}
+section#comment-page main .side-left .form-container .form .button-container .reset-button-container .reset-button {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #cbd5e1;
+  font-weight: bold;
+  background: #001925;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+}
+section#comment-page main .side-left .form-container .form .button-container .reset-button-container .reset-button:hover {
+  background: rgba(57, 46, 45, 0.8);
+  color: #f1f5f9;
+}
+section#comment-page main .side-right {
+  padding: 1rem 4rem;
+}
+section#comment-page main .side-right .page {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: cursive;
+  font-size: 20px;
+  border-radius: 10px;
+  background: #fff;
+  background-image: linear-gradient(#f5f5f0 1.1rem, #ccc 1.2rem);
+  background-size: 100% 1.2rem;
+  line-height: 1.2rem;
+  padding: 1.4rem 0.5rem 0.3rem 4.5rem;
+}
+section#comment-page main .side-right .page::before, section#comment-page main .side-right .page::after {
+  position: absolute;
+  content: "";
+  bottom: 10px;
+  width: 40%;
+  height: 10px;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.7);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+section#comment-page main .side-right .page::before {
+  left: 15px;
+  transform: skew(-5deg) rotate(-5deg);
+}
+section#comment-page main .side-right .page::after {
+  right: 15px;
+  transform: skew(5deg) rotate(5deg);
+}
+section#comment-page main .side-right .page:hover::before, section#comment-page main .side-right .page:hover::after {
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.4);
+}
+section#comment-page main .side-right .margin {
+  position: absolute;
+  border-left: 1px solid #d88;
+  height: 100%;
+  left: 2.5rem;
+  top: 0;
+}
+section#comment-page main .side-right .page p {
+  padding: 0 10px;
+  text-align: justify;
+  margin: 0;
+  text-indent: 1rem;
+  padding-bottom: 1.2rem;
+  color: black;
+  line-height: 20px;
 }
 
 section#show-island {
@@ -1066,7 +1237,7 @@ section#detail-ethnic main .table-content table {
 }
 section#detail-ethnic main .table-content table thead th {
   padding: 5px 10px;
-  background-color: orange;
+  background-color: brown;
 }
 section#detail-ethnic main .table-content table tbody tr td {
   text-align: center;
@@ -1075,6 +1246,230 @@ section#detail-ethnic main .table-content table tbody tr td {
 }
 section#detail-ethnic main .table-content table tbody tr td:nth-child(1) {
   background-color: #cbd5e1;
+}
+
+section#login-page {
+  overflow: hidden;
+}
+section#login-page nav {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 40px;
+}
+section#login-page nav .button-back a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
+section#login-page nav .button-back a:hover {
+  color: red;
+}
+section#login-page main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#login-page main .container {
+  max-width: 450px;
+  background: #f8f9fd;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  margin: 20px;
+}
+section#login-page main .heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(16, 137, 211);
+}
+section#login-page main .form {
+  margin-top: 2rem;
+}
+section#login-page main .form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+}
+section#login-page main .form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+section#login-page main .form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+section#login-page main .form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12b1d1;
+}
+section#login-page main .form .forgot-password {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+section#login-page main .form .forgot-password a {
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: none;
+}
+section#login-page main .form .login-button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+section#login-page main .form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
+section#login-page main .form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+section#login-page main .agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+section#login-page main .agreement span {
+  color: #374151;
+}
+section#login-page main .agreement a {
+  color: #0099ff;
+  font-size: 1rem;
+}
+
+section#register-page {
+  overflow: hidden;
+}
+section#register-page nav {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 40px;
+}
+section#register-page nav .button-back a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
+section#register-page nav .button-back a:hover {
+  color: red;
+}
+section#register-page main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#register-page main .container {
+  max-width: 450px;
+  background: #f8f9fd;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(244, 247, 251) 100%);
+  border-radius: 40px;
+  padding: 25px 35px;
+  border: 5px solid rgb(255, 255, 255);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+  margin: 20px;
+}
+section#register-page main .heading {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+  color: rgb(16, 137, 211);
+}
+section#register-page main .form {
+  margin-top: 2rem;
+}
+section#register-page main .form .input {
+  width: 100%;
+  background: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  margin-top: 15px;
+  box-shadow: #cff0ff 0px 10px 10px -5px;
+  border-inline: 2px solid transparent;
+}
+section#register-page main .form .input::-moz-placeholder {
+  color: rgb(170, 170, 170);
+}
+section#register-page main .form .input::placeholder {
+  color: rgb(170, 170, 170);
+}
+section#register-page main .form .input:focus {
+  outline: none;
+  border-inline: 2px solid #12b1d1;
+}
+section#register-page main .form .forgot-password {
+  display: block;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+section#register-page main .form .forgot-password a {
+  font-size: 11px;
+  color: #0099ff;
+  text-decoration: none;
+}
+section#register-page main .form .login-button {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  color: white;
+  padding-block: 15px;
+  margin: 2rem auto;
+  border-radius: 20px;
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+}
+section#register-page main .form .login-button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
+section#register-page main .form .login-button:active {
+  transform: scale(0.95);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 15px 10px -10px;
+}
+section#register-page main .agreement {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+}
+section#register-page main .agreement span {
+  color: #374151;
+}
+section#register-page main .agreement a {
+  color: #0099ff;
+  font-size: 1rem;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -40,7 +40,7 @@ $members = getData('SELECT * FROM biodatas');
             <div class="utils">
                 <div class="profile">
                     <!-- <img src="https://source.unsplash.com/1200x350?profile" alt="pic" class="image"> -->
-                    <span class="username">Hello, Muhammad</span>
+                    <a href="http://localhost/kebudayaan/views/user/login" class="username">Login</a>
                 </div>
             </div>
         </nav>

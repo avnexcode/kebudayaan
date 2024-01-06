@@ -58,7 +58,7 @@ $islands = getData("SELECT * FROM islands");
             <div class="utils">
                 <div class="profile">
                     <!-- <img src="https://source.unsplash.com/1200x350?profile" alt="pic" class="image"> -->
-                    <span class="username">Login</span>
+                    <a href="http://localhost/kebudayaan/views/user/login" class="username">Login</a>
                 </div>
             </div>
         </nav>
