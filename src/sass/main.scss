@@ -1196,7 +1196,7 @@ section#show-island {
             a {
                 font-size: 2rem;
                 font-weight: 500;
-                color: black;
+                color: $slate-900;
                 &:hover {
                     color: red;
                 }
@@ -1227,7 +1227,7 @@ section#show-island {
             .carousel-slide {
                 height: 100vh;
                 header {
-                    padding: 0 10%;
+                    padding: 0 1rem;
                     display: flex;
                     justify-content: space-between;
                     .image {
@@ -1235,9 +1235,9 @@ section#show-island {
                             bottom-left-radius: 3rem;
                             bottom-right-radius: 3rem;
                         }
-                        width: 70%;
+                        width: 50%;
                         height: 60vh;
-                        background-color: rgba(57, 46, 45, 255);
+                        // background-color: rgba(57, 46, 45, 255);
                         display: flex;
                         justify-content: center;
                         position: relative;
@@ -1253,6 +1253,7 @@ section#show-island {
                         }
                     }
                     .describe {
+                        width: 70%;
                         flex-grow: 1;
                         display: flex;
                         justify-content: center;
@@ -1285,12 +1286,13 @@ section#show-island {
                 }
                 main {
                     margin-top: 5rem;
+                    padding: 0 5rem;
                     .gallery {
                         .image-list {
                             display: flex;
                             flex-direction: row;
-                            gap: 50px;
                             justify-content: center;
+                            gap: 25px;
                             .img {
                                 padding: 10px;
                                 img {
@@ -1370,11 +1372,13 @@ section#detail-ethnic {
         background-color: rgba(237, 188, 130, 255);
         width: 100%;
         .title {
-            width: 50%;
+            // width: 50%;
             position: relative;
             h1 {
                 font-size: 2.5rem;
                 padding: 0 10px;
+                padding-right: 4rem;
+                color: red;
             }
             &::after {
                 content: "";

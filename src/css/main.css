@@ -1034,7 +1034,7 @@ section#show-island nav {
 section#show-island nav .button-back a {
   font-size: 2rem;
   font-weight: 500;
-  color: black;
+  color: #0f172a;
 }
 section#show-island nav .button-back a:hover {
   color: red;
@@ -1064,16 +1064,15 @@ section#show-island div.content-list #container-wrapper .carousel-slide {
   height: 100vh;
 }
 section#show-island div.content-list #container-wrapper .carousel-slide header {
-  padding: 0 10%;
+  padding: 0 1rem;
   display: flex;
   justify-content: space-between;
 }
 section#show-island div.content-list #container-wrapper .carousel-slide header .image {
   border-bottom-left-radius: 3rem;
   border-bottom-right-radius: 3rem;
-  width: 70%;
+  width: 50%;
   height: 60vh;
-  background-color: rgb(57, 46, 45);
   display: flex;
   justify-content: center;
   position: relative;
@@ -1088,6 +1087,7 @@ section#show-island div.content-list #container-wrapper .carousel-slide header .
   border-radius: 50%;
 }
 section#show-island div.content-list #container-wrapper .carousel-slide header .describe {
+  width: 70%;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -1119,12 +1119,13 @@ section#show-island div.content-list #container-wrapper .carousel-slide header .
 }
 section#show-island div.content-list #container-wrapper .carousel-slide main {
   margin-top: 5rem;
+  padding: 0 5rem;
 }
 section#show-island div.content-list #container-wrapper .carousel-slide main .gallery .image-list {
   display: flex;
   flex-direction: row;
-  gap: 50px;
   justify-content: center;
+  gap: 25px;
 }
 section#show-island div.content-list #container-wrapper .carousel-slide main .gallery .image-list .img {
   padding: 10px;
@@ -1194,12 +1195,13 @@ section#detail-ethnic header {
   width: 100%;
 }
 section#detail-ethnic header .title {
-  width: 50%;
   position: relative;
 }
 section#detail-ethnic header .title h1 {
   font-size: 2.5rem;
   padding: 0 10px;
+  padding-right: 4rem;
+  color: red;
 }
 section#detail-ethnic header .title::after {
   content: "";

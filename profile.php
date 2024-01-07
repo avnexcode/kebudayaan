@@ -122,7 +122,7 @@ $members = getData('SELECT * FROM biodatas');
                                     </a>
                                     <!-- Github -->
                                     <a href="<?= removeLocalHost($value['github']) ?>">
-                                        <svg width="50px" height="50px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <svg width="40px" height="40px" viewBox="0 0 73 73" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
                                             <title>team-collaboration/version-control/github</title>
                                             <desc>Created with Sketch.</desc>

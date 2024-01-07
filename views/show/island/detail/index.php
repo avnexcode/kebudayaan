@@ -48,7 +48,7 @@ if (isset($_GET['slug'])) {
                 <h1><?= $ethnic['name'] ?></h1>
             </div>
             <div class="describe">
-                <span><?= $ethnic['describe'] ?></span>
+                <span>Tari, Alat Musik dan Makanan pada <?= $ethnic['name'] ?></span>
             </div>
         </header>
         <main>
