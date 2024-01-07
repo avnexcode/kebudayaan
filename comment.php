@@ -1,3 +1,38 @@
+<?php
+session_start();
+require('./module/function.php');
+if (isset($_SESSION['login'])) {
+    $username = $_SESSION['auth']['name'];
+    $email = $_SESSION['auth']['email'];
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (!isset($_SESSION['login'])) {
+        header('Location:http://localhost/kebudayaan/views/user/login/');
+    } else {
+        if (setComments($_SESSION['auth']['id']) > 0) {
+            echo "
+                <script>
+                    alert('Berhasil');
+                </script>            
+            ";
+        } else {
+            echo "
+                <script>
+                    alert('gagal');
+                </script>
+            ";
+        }
+    }
+}
+
+$comments = getData("SELECT * FROM comments");
+function getUsername($user_id)
+{
+    return getData("SELECT * FROM users WHERE id = '$user_id'")[0]['name'];
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,10 +83,10 @@
         <main>
             <div class="side side-left">
                 <div class="form-container">
-                    <form class="form">
+                    <form class="form" method="post">
                         <!-- <span class="heading">Hujat Kami di Sini</span> -->
-                        <input placeholder="Name" type="text" class="input">
-                        <input placeholder="Email" id="mail" type="email" class="input">
+                        <input placeholder="Name" type="text" class="input" name="name" id="name" value="<?= $username ?? '' ?>" readonly>
+                        <input placeholder="Email" id="email" type="email" class="input" name="email" value="<?= $email ?? '' ?>" readonly>
                         <textarea placeholder="Say Hello" rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
                         <div class="button-container">
                             <button class="send-button">Send</button>
@@ -64,16 +99,11 @@
             </div>
             <div class="side side-right">
                 <div class="page">
-                    <!-- Utama -->
-                    <div class="margin"></div>
-                    <p>Muhammad Fauzi Nur Aziz</p>
-                    <p>-Duar Kemem-</p>
-                    <!-- End Utama -->
-                    <!-- Utama -->
-                    <div class="margin"></div>
-                    <p>Muhammad Fauzi Nur Aziz</p>
-                    <p>-Duar Kemem-</p>
-                    <!-- End Utama -->
+                    <?php foreach ($comments as $key => $value) : ?>
+                        <div class="margin"></div>
+                        <p class="username">Dari : <?= getUsername($value['user_id']) ?></p>
+                        <p class="content">-<?= $value['content'] ?>-</p>
+                    <?php endforeach; ?>
                 </div>
             </div>
         </main>

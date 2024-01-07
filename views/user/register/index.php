@@ -1,3 +1,27 @@
+<?php
+session_start();
+require('../../../module/function.php');
+if (isset($_SESSION["login"])) {
+    header("Location:http://localhost/kebudayaan/");
+}
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    if (register() > 0) {
+        echo "
+            <script>
+                alert('register berhasil');
+                document.location.href = 'http://localhost/kebudayaan/views/user/login/'
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('register gagal');
+                document.location.href = 'http://localhost/kebudayaan/views/user/register/'
+            </script>
+        ";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,11 +53,11 @@
         <main>
             <div class="container">
                 <div class="heading">Register</div>
-                <form action="" class="form">
-                    <input required="" class="input" type="text" name="username" id="username" placeholder="Username">
-                    <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-                    <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
-                    <input required="" class="input" type="password" name="password-confirm" id="password-confirm" placeholder="Password Confirm">
+                <form action="" class="form" method="post">
+                    <input autofocus class="input" type="text" name="name" id="name" placeholder="Username">
+                    <input required class="input" type="email" name="email" id="email" placeholder="E-mail">
+                    <input required class="input" type="password" name="password" id="password" placeholder="Password">
+                    <input required class="input" type="password" name="password_confirm" id="password-confirm" placeholder="Password Confirm">
                     <input class="login-button" type="submit" value="Register">
                 </form>
                 <div class="agreement">

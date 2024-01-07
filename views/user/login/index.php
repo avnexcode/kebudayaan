@@ -1,3 +1,28 @@
+<?php
+session_start();
+require('../../../module/function.php');
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $user = getData("SELECT * FROM users WHERE email = '$email'")[0];
+    if ($user && password_verify($password, $user["password"])) {
+        $_SESSION["login"] = true;
+        $_SESSION['auth'] = $user;
+        echo "
+            <script>
+                alert('berhasil login');
+                document.location.href = 'http://localhost/kebudayaan/';
+            </script>
+        ";
+    } else {
+        echo "
+            <script>
+                alert('Salah Email atau password');
+            </script>
+        ";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,9 +54,9 @@
         <main>
             <div class="container">
                 <div class="heading">Sign In</div>
-                <form action="" class="form">
-                    <input required="" class="input" type="email" name="email" id="email" placeholder="E-mail">
-                    <input required="" class="input" type="password" name="password" id="password" placeholder="Password">
+                <form action="" class="form" method="post">
+                    <input autofocus required="" class="input" type="email" name="email" id="email" placeholder="E-mail" value="axnvee18@gmail.com">
+                    <input required="" class="input" type="password" name="password" id="password" placeholder="Password" value="password">
                     <input class="login-button" type="submit" value="Sign In">
                 </form>
                 <div class="agreement">

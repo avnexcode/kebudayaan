@@ -1,5 +1,9 @@
 <?php
+session_start();
 require("./module/function.php");
+if (isset($_SESSION["login"])) {
+    $username = $_SESSION['auth']['name'];
+}
 $islands = getData("SELECT * FROM islands");
 
 ?>
@@ -57,8 +61,11 @@ $islands = getData("SELECT * FROM islands");
             <!-- utiliti -->
             <div class="utils">
                 <div class="profile">
-                    <!-- <img src="https://source.unsplash.com/1200x350?profile" alt="pic" class="image"> -->
-                    <a href="http://localhost/kebudayaan/views/user/login" class="username">Login</a>
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <a onclick="confirmAction('Yakin Logout ?','http://localhost/kebudayaan/views/user/logout')" class="sign">Logout</a>
+                    <?php else : ?>
+                        <a href="http://localhost/kebudayaan/views/user/login" class="sign">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
@@ -262,6 +269,13 @@ $islands = getData("SELECT * FROM islands");
             describeCard.prev()
             background.prev()
         });
+
+
+        const confirmAction = (text, url) => {
+            if (confirm(text)) {
+                document.location.href = url
+            }
+        }
     </script>
 </body>
 
