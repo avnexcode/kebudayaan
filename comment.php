@@ -69,9 +69,15 @@ function getUsername($user_id)
             </ul>
             <!-- utiliti -->
             <div class="utils">
-                <div class="profile">
-                    <!-- <img src="https://source.unsplash.com/1200x350?profile" alt="pic" class="image"> -->
-                    <a href="http://localhost/kebudayaan/views/user/login" class="username">Login</a>
+                <div class="user-nav">
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <?php if ($_SESSION['auth']['admin'] > 0) : ?>
+                            <a href="http://localhost/kebudayaan/views/dashboard/" class="sign">Dashboard</a>
+                        <?php endif; ?>
+                        <a onclick="confirmAction('Yakin Logout ?','http://localhost/kebudayaan/views/user/logout')" class="sign">Logout</a>
+                    <?php else : ?>
+                        <a href="http://localhost/kebudayaan/views/user/login" class="sign">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
@@ -87,12 +93,12 @@ function getUsername($user_id)
                         <!-- <span class="heading">Hujat Kami di Sini</span> -->
                         <input placeholder="Name" type="text" class="input" name="name" id="name" value="<?= $username ?? '' ?>" readonly>
                         <input placeholder="Email" id="email" type="email" class="input" name="email" value="<?= $email ?? '' ?>" readonly>
-                        <textarea placeholder="Say Hello" rows="10" cols="30" id="message" name="message" class="textarea"></textarea>
+                        <textarea placeholder="Say Hello" rows="10" cols="30" id="message" name="message" class="textarea" maxlength="250"></textarea>
                         <div class="button-container">
                             <button class="send-button">Send</button>
-                            <div class="reset-button-container">
+                            <!-- <div class="reset-button-container">
                                 <button id="reset-btn" class="reset-button">Reset</button>
-                            </div>
+                            </div> -->
                         </div>
                     </form>
                 </div>
@@ -143,6 +149,11 @@ function getUsername($user_id)
             // }
         };
         typing()
+        const confirmAction = (text, url) => {
+            if (confirm(text)) {
+                document.location.href = url
+            }
+        }
     </script>
 </body>
 

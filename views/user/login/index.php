@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="container">
                 <div class="heading">Sign In</div>
                 <form action="" class="form" method="post">
-                    <input autofocus required="" class="input" type="email" name="email" id="email" placeholder="E-mail" value="axnvee18@gmail.com">
+                    <input autofocus required="" class="input" type="email" name="email" id="email" placeholder="E-mail" value="aziz@gmail.com">
                     <input required="" class="input" type="password" name="password" id="password" placeholder="Password" value="password">
                     <input class="login-button" type="submit" value="Sign In">
                 </form>

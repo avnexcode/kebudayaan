@@ -63,6 +63,36 @@ function setComments($user_id)
     global $connect;
     $content = htmlspecialchars($_POST["message"]);
     $query = "INSERT INTO comments (user_id, content) VALUES ('$user_id','$content')";
-    mysqli_query($connect , $query);
+    mysqli_query($connect, $query);
+    return mysqli_affected_rows($connect);
+}
+
+function searchComments($key)
+{
+    $query = "SELECT * FROM comments c JOIN users u ON c.user_id = u.id WHERE u.name LIKE '%$key%' OR u.email LIKE '%$key%' OR c.content LIKE '%$key%'";
+    $data = getData($query);
+    return $data;
+}
+
+function searchUsers($key)
+{
+    $query = "SELECT * FROM users u WHERE (u.name LIKE '%$key%' OR u.email LIKE '%$key%') AND u.admin != '1'";
+
+    $data = getData($query);
+    return $data;
+}
+
+function deleteComment($comment_id)
+{
+    global $connect;
+    $query = "DELETE FROM comments WHERE id = '$comment_id'";
+    mysqli_query($connect, $query);
+    return mysqli_affected_rows($connect);
+}
+
+function deleteUser($user_id) {
+    global $connect;
+    $query = "DELETE FROM users WHERE id = '$user_id'";
+    mysqli_query($connect, $query);
     return mysqli_affected_rows($connect);
 }

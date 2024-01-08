@@ -94,6 +94,7 @@ section#main-page .background-list #container-background .carousel-wrapper .caro
   object-fit: cover;
 }
 section#main-page nav {
+  backdrop-filter: blur(10px);
   z-index: 999;
   display: flex;
   justify-content: space-between;
@@ -148,7 +149,7 @@ section#main-page nav ul.desktop-nav li:hover::after, section#main-page nav ul.d
   width: 80%;
 }
 section#main-page nav ul.desktop-nav li:nth-child(1) a {
-  color: white;
+  color: #cbd5e1;
 }
 section#main-page nav ul.desktop-nav li a {
   font-size: 1.1rem;
@@ -167,23 +168,26 @@ section#main-page nav .utils {
   align-items: center;
   gap: 20px;
 }
-section#main-page nav .utils .profile {
+section#main-page nav .utils .user-nav {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
-section#main-page nav .utils .profile .image {
+section#main-page nav .utils .user-nav .image {
   object-fit: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid black;
 }
-section#main-page nav .utils .profile .sign {
+section#main-page nav .utils .user-nav .sign {
   z-index: 999;
   color: white;
   text-decoration: none;
   cursor: pointer;
+}
+section#main-page nav .utils .user-nav .sign:hover {
+  color: #cbd5e1;
 }
 section#main-page header {
   display: flex;
@@ -578,10 +582,9 @@ section#profile-page {
   height: 100vh;
   overflow-x: hidden;
   width: 100%;
-  background-color: rgba(82, 80, 81, 0.3);
+  background-color: #94a3b8;
 }
 section#profile-page nav {
-  background-color: rgba(82, 80, 81, 0.8);
   backdrop-filter: blur(5px);
   z-index: 999;
   display: flex;
@@ -656,22 +659,26 @@ section#profile-page nav .utils {
   align-items: center;
   gap: 20px;
 }
-section#profile-page nav .utils .profile {
+section#profile-page nav .utils .user-nav {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
-section#profile-page nav .utils .profile .image {
+section#profile-page nav .utils .user-nav .image {
   object-fit: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid black;
 }
-section#profile-page nav .utils .profile .username {
+section#profile-page nav .utils .user-nav .sign {
   z-index: 999;
   color: white;
   text-decoration: none;
+  cursor: pointer;
+}
+section#profile-page nav .utils .user-nav .sign:hover {
+  color: #cbd5e1;
 }
 section#profile-page main {
   height: 100vh;
@@ -764,11 +771,10 @@ section#profile-page main .card-list .container .card .icons {
 
 section#comment-page {
   width: 100%;
-  background-color: rgba(82, 80, 81, 0.3);
+  background-color: #94a3b8;
 }
 section#comment-page nav {
   z-index: 999;
-  background-color: rgba(82, 80, 81, 0.8);
   backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
@@ -823,7 +829,7 @@ section#comment-page nav ul.desktop-nav li:hover::after, section#comment-page na
   width: 80%;
 }
 section#comment-page nav ul.desktop-nav li:nth-child(3) a {
-  color: white;
+  color: #cbd5e1;
 }
 section#comment-page nav ul.desktop-nav li a {
   font-size: 1.1rem;
@@ -842,22 +848,26 @@ section#comment-page nav .utils {
   align-items: center;
   gap: 20px;
 }
-section#comment-page nav .utils .profile {
+section#comment-page nav .utils .user-nav {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 30px;
 }
-section#comment-page nav .utils .profile .image {
+section#comment-page nav .utils .user-nav .image {
   object-fit: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border: 1.5px solid black;
 }
-section#comment-page nav .utils .profile .username {
+section#comment-page nav .utils .user-nav .sign {
   z-index: 999;
   color: white;
   text-decoration: none;
+  cursor: pointer;
+}
+section#comment-page nav .utils .user-nav .sign:hover {
+  color: #cbd5e1;
 }
 section#comment-page header {
   width: 100%;
@@ -935,7 +945,7 @@ section#comment-page main .side-left .form-container .form .button-container {
   gap: 10px;
 }
 section#comment-page main .side-left .form-container .form .button-container .send-button {
-  flex-basis: 70%;
+  flex-basis: 100%;
   background: #cbd5e1;
   padding: 10px;
   color: #001925;
@@ -947,25 +957,6 @@ section#comment-page main .side-left .form-container .form .button-container .se
 section#comment-page main .side-left .form-container .form .button-container .send-button:hover {
   background: transparent;
   border: 1px solid rgba(57, 46, 45, 0.8);
-  color: #f1f5f9;
-}
-section#comment-page main .side-left .form-container .form .button-container .reset-button-container {
-  filter: drop-shadow(1px 1px 0px rgba(57, 46, 45, 0.8));
-  flex-basis: 30%;
-}
-section#comment-page main .side-left .form-container .form .button-container .reset-button-container .reset-button {
-  width: 100%;
-  position: relative;
-  text-align: center;
-  padding: 10px;
-  color: #cbd5e1;
-  font-weight: bold;
-  background: #001925;
-  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
-  transition: all 0.2s ease-in-out;
-}
-section#comment-page main .side-left .form-container .form .button-container .reset-button-container .reset-button:hover {
-  background: rgba(57, 46, 45, 0.8);
   color: #f1f5f9;
 }
 section#comment-page main .side-right {
@@ -1214,7 +1205,7 @@ section#detail-ethnic header .title h1 {
   font-size: 2.5rem;
   padding: 0 10px;
   padding-right: 4rem;
-  color: red;
+  color: #1e293b;
 }
 section#detail-ethnic header .title::after {
   content: "";
@@ -1485,6 +1476,239 @@ section#register-page main .agreement span {
 section#register-page main .agreement a {
   color: #0099ff;
   font-size: 1rem;
+}
+
+section#dashboard-page {
+  width: 100%;
+  display: flex;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+section#dashboard-page .aside-nav {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 15%;
+  border-right: 3px solid black;
+}
+section#dashboard-page .aside-nav .title {
+  background: #1e293b;
+  color: white;
+  width: 100%;
+  border-bottom: 3px solid black;
+  padding: 10px 20px;
+}
+section#dashboard-page .aside-nav .title h1 a {
+  text-decoration: none;
+  color: white;
+  text-align: center;
+}
+section#dashboard-page .aside-nav nav {
+  margin-top: 10px;
+  width: 100%;
+}
+section#dashboard-page .aside-nav nav table {
+  width: 100%;
+  padding-left: 1rem;
+}
+section#dashboard-page .aside-nav nav table tr {
+  width: 100%;
+}
+section#dashboard-page .aside-nav nav table tr td a {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: black;
+  text-decoration: none;
+}
+section#dashboard-page .aside-nav .sign {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+}
+section#dashboard-page .aside-nav .sign table tr td a.logout {
+  margin-left: 1rem;
+  color: black;
+  text-decoration: none;
+}
+section#dashboard-page .aside-content {
+  height: 100vh;
+  width: 100%;
+  overflow-y: auto;
+  margin: 2rem 0;
+}
+section#dashboard-page .aside-content header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #1e293b;
+  color: white;
+  border-bottom: 3px solid black;
+  padding: 10px 20px;
+}
+section#dashboard-page .aside-content main {
+  padding: 2rem;
+}
+section#dashboard-page .aside-content main .search {
+  margin: 1rem 0;
+}
+section#dashboard-page .aside-content main .search form .input {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+section#dashboard-page .aside-content main .search form .input input {
+  width: 90%;
+  padding: 3px 5px;
+  font-size: 1.1rem;
+  border: 2px solid black;
+}
+section#dashboard-page .aside-content main .search form .input input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+section#dashboard-page .aside-content main .search form .input button {
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  background: rgb(11, 132, 203);
+}
+section#dashboard-page .aside-content main table {
+  background-color: black;
+  width: 100%;
+}
+section#dashboard-page .aside-content main table th {
+  background-color: #475569;
+  padding: 5px;
+  color: white;
+}
+section#dashboard-page .aside-content main table th:nth-child(1) {
+  width: 5px;
+  text-align: center;
+}
+section#dashboard-page .aside-content main table tr {
+  background-color: #e2e8f0;
+}
+section#dashboard-page .aside-content main table tr td {
+  padding: 5px;
+  text-align: justify;
+}
+section#dashboard-page .aside-content main table tr td:nth-child(1), section#dashboard-page .aside-content main table tr td:nth-child(4), section#dashboard-page .aside-content main table tr td:nth-child(5) {
+  text-align: center;
+}
+section#dashboard-page .aside-content main table tr td:nth-child(4), section#dashboard-page .aside-content main table tr td:nth-child(5) {
+  min-width: 50px;
+}
+section#dashboard-page .aside-content main table tr td:nth-child(2) {
+  width: 300px;
+}
+section#dashboard-page .aside-content main table tr td a {
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+}
+
+section#update-comment {
+  width: 100%;
+  height: 100vh;
+}
+section#update-comment nav {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 5px 40px;
+}
+section#update-comment nav .button-back a {
+  font-size: 2rem;
+  font-weight: 500;
+  color: black;
+}
+section#update-comment nav .button-back a:hover {
+  color: red;
+}
+section#update-comment main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section#update-comment main .form-container {
+  max-width: 700px;
+  height: auto;
+  max-height: 450px;
+  margin: 30px;
+  background: linear-gradient(45deg, rgb(16, 137, 211) 0%, rgb(18, 177, 209) 100%);
+  padding: 30px;
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+section#update-comment main .form-container .heading {
+  text-align: center;
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+section#update-comment main .form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #f1f5f9;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+section#update-comment main .form-container .form .input:focus {
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+}
+section#update-comment main .form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #f1f5f9;
+  color: rgba(57, 46, 45, 0.8);
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+section#update-comment main .form-container .form .textarea:focus {
+  border-left: 5px solid rgba(57, 46, 45, 0.8);
+}
+section#update-comment main .form-container .form .button-container {
+  display: flex;
+  gap: 10px;
+}
+section#update-comment main .form-container .form .button-container .send-button {
+  flex-basis: 100%;
+  background: #cbd5e1;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+section#update-comment main .form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid rgba(57, 46, 45, 0.8);
+  color: #f1f5f9;
 }
 
 /*# sourceMappingURL=main.css.map */

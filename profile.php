@@ -1,4 +1,5 @@
 <?php
+session_start();
 require('./module/function.php');
 $members = getData('SELECT * FROM biodatas');
 ?>
@@ -38,9 +39,15 @@ $members = getData('SELECT * FROM biodatas');
             </ul>
             <!-- utiliti -->
             <div class="utils">
-                <div class="profile">
-                    <!-- <img src="https://source.unsplash.com/1200x350?profile" alt="pic" class="image"> -->
-                    <a href="http://localhost/kebudayaan/views/user/login" class="username">Login</a>
+                <div class="user-nav">
+                    <?php if (isset($_SESSION['login'])) : ?>
+                        <?php if ($_SESSION['auth']['admin'] > 0) : ?>
+                            <a href="http://localhost/kebudayaan/views/dashboard/" class="sign">Dashboard</a>
+                        <?php endif; ?>
+                        <a onclick="confirmAction('Yakin Logout ?','http://localhost/kebudayaan/views/user/logout')" class="sign">Logout</a>
+                    <?php else : ?>
+                        <a href="http://localhost/kebudayaan/views/user/login" class="sign">Login</a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>
@@ -182,6 +189,11 @@ $members = getData('SELECT * FROM biodatas');
             // }
         };
         typing()
+        const confirmAction = (text, url) => {
+            if (confirm(text)) {
+                document.location.href = url
+            }
+        }
     </script>
 </body>
 

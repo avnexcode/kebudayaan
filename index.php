@@ -60,8 +60,11 @@ $islands = getData("SELECT * FROM islands");
             </ul>
             <!-- utiliti -->
             <div class="utils">
-                <div class="profile">
+                <div class="user-nav">
                     <?php if (isset($_SESSION['login'])) : ?>
+                        <?php if ($_SESSION['auth']['admin'] > 0) : ?>
+                            <a href="http://localhost/kebudayaan/views/dashboard/" class="sign">Dashboard</a>
+                        <?php endif; ?>
                         <a onclick="confirmAction('Yakin Logout ?','http://localhost/kebudayaan/views/user/logout')" class="sign">Logout</a>
                     <?php else : ?>
                         <a href="http://localhost/kebudayaan/views/user/login" class="sign">Login</a>

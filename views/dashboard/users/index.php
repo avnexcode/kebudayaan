@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("../../module/function.php");
+require("../../../module/function.php");
 if (!isset($_SESSION["login"])) {
     header("Location:http://localhost/kebudayaan/views/user/login/");
 }
@@ -9,13 +9,11 @@ if (isset($_SESSION["auth"])) {
         header("Location:http://localhost/kebudayaan/");
     }
 }
-$comments = getData("SELECT * FROM comments");
-function getUsername($id)
-{
-    return getData("SELECT * FROM users WHERE id = '$id'")[0]['name'];
-}
+
+$users = getData("SELECT * FROM users WHERE admin != '1'");
+
 if (isset($_GET["search"])) {
-    $comments = searchComments($_GET["search"]);
+    $users = searchUsers($_GET["search"]);
     $keyValue = $_GET["search"];
 } else {
     $keyValue = "";
@@ -30,8 +28,8 @@ if (isset($_GET["search"])) {
     <!-- Font Awesome Cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS -->
-    <link rel="stylesheet" href="../../src/css/main.css">
-    <title>Comments - Dashboard</title>
+    <link rel="stylesheet" href="../../../src/css/main.css">
+    <title>User - Dashboard</title>
 </head>
 
 <body>
@@ -73,7 +71,7 @@ if (isset($_GET["search"])) {
         </div>
         <div class="aside-content">
             <header>
-                <h1>Dashboard - Comments</h1>
+                <h1>Dashboard - Users</h1>
             </header>
             <main>
                 <div class="search">
@@ -87,18 +85,17 @@ if (isset($_GET["search"])) {
                 <table>
                     <thead>
                         <th>NO</th>
-                        <th>User</th>
-                        <th>Message</th>
-                        <th colspan="2">Action</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th colspan="1">Action</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($comments as $key => $value) : ?>
+                        <?php foreach ($users as $key => $value) : ?>
                             <tr>
                                 <td><?= $key + 1 ?></td>
-                                <td><?= strtoupper(getUsername($value['user_id'])) ?></td>
-                                <td><?= $value['content'] ?></td>
-                                <td><a onclick="confirmAction('Yakin ingin mengedit?','http://localhost/kebudayaan/views/dashboard/update?id=<?= $value['id'] ?>')"><i class="fa-regular fa-pen-to-square"></i></a></td>
-                                <td><a onclick="confirmAction('Yakin dihapus?','http://localhost/kebudayaan/views/dashboard/delete?id=<?= $value['id'] ?>')"><i class="fa-solid fa-trash"></i></a></td>
+                                <td><?= strtoupper($value['name']) ?></td>
+                                <td><?= $value['email'] ?></td>
+                                <td><a onclick="confirmAction('Yakin dihapus?','http://localhost/kebudayaan/views/dashboard/users/delete?id=<?= $value['id'] ?>')"><i class="fa-solid fa-trash"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>
